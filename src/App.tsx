@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import eventsData from './data.json';
-import { useState } from 'react';
 
 type SetEventIndex = (index: number) => void;
 
