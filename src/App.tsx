@@ -6,6 +6,8 @@ import eventsData from "./data.json";
 
 type SetEventIndex = (index: number) => void;
 
+document.body.style.backgroundColor = "#343638";
+
 function MainContent({
     eventIndex,
     setEventIndex,
@@ -22,10 +24,11 @@ function MainContent({
                 </Col>
             </Row>
             <Row className="mt-3">
-                <Col className="col-12">
+                <Col className="col-12" id="image-container">
                     <Image
                         src={eventsData[eventIndex].path}
-                        className="img-fluid"
+                        id="graphic"
+                        className="rounded img-fluid"
                         alt="Image Description"
                     />
                 </Col>
@@ -42,20 +45,20 @@ function MainContent({
                     <Col>
                         <Button
                             href="#"
-                            className="btn-primary btn-block"
-                            onClick={incIndex(eventIndex, setEventIndex)}
-                            id="b1"
+                            className="btn-primary btn-block rounded-pill"
+                            id="b2"
                         >
-                            Button 1
+                            I&apos;ve seen enough.
                         </Button>
                     </Col>
                     <Col>
                         <Button
                             href="#"
-                            className="btn-primary btn-block"
-                            id="b2"
+                            className="btn-primary btn-block rounded-pill"
+                            onClick={incIndex(eventIndex, setEventIndex)}
+                            id="b1"
                         >
-                            Button 2
+                            Show me more
                         </Button>
                     </Col>
                 </Row>

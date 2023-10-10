@@ -19,8 +19,45 @@
     font-size: 1.5em;
 }
 
+.title {
+    text-align: center;
+    font-size: 3em;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 2em;
+}
+
+.main-img {
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+}
+
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vw;
+    background-color: #404040;
+}
+
+#b1 {
+    white-space: nowrap;
+}
+
+#b2 {
+    white-space: nowrap;
+}
+
+.text-center {
+    color: #ffffff;
 }
