@@ -6,8 +6,18 @@ async function main() {
       where: { email: 'rauchg@vercel.com' },
       update: {},
       create: {
-        name: 'Test',
+        name: 'Guillermo Rauch',
         email: 'rauchg@vercel.com',
+        image:
+          'https://pbs.twimg.com/profile_images/1576257734810312704/ucxb4lHy_400x400.jpg',
+      },
+    }),
+    prisma.users.upsert({
+      where: { email: 'test@gmail.com' },
+      update: {},
+      create: {
+        name: 'Testing',
+        email: 'test@gmail.com',
         image:
           'https://pbs.twimg.com/profile_images/1576257734810312704/ucxb4lHy_400x400.jpg',
       },
