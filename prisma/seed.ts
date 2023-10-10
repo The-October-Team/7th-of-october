@@ -6,7 +6,7 @@ async function main() {
       where: { email: 'rauchg@vercel.com' },
       update: {},
       create: {
-        name: 'Guillermo Rauch',
+        name: 'Test',
         email: 'rauchg@vercel.com',
         image:
           'https://pbs.twimg.com/profile_images/1576257734810312704/ucxb4lHy_400x400.jpg',
