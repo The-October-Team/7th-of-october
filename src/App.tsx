@@ -8,7 +8,7 @@ type SetEventIndex = (index: number) => void;
 
 function MainContent({ eventIndex, setEventIndex }: { eventIndex: number, setEventIndex: SetEventIndex }) {
   return (
-    <div className="container mt-5">
+    <Container className="mt-5">
       <Row>
         <Col className="col-12">
           <h1 className="text-center">Your Title</h1>
@@ -35,8 +35,8 @@ function MainContent({ eventIndex, setEventIndex }: { eventIndex: number, setEve
           </Col>
         </Row>
       </Container>
-    </div>
-    );
+    </Container>
+  );
 }
 
 
