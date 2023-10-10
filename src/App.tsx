@@ -1,8 +1,17 @@
 import React from 'react'
 import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
- 
-function MainContent() {
+import eventData from './data.json';
+import {useState} from 'react';
+
+interface Event {
+    details: string;
+    path: string;
+}
+
+type SetEventIndex = (index: number)=>void
+
+function MainContent({ eventIndex, setEventIndex }: {eventIndex: number, setEventIndex: SetEventIndex}) {
     return (
       <div className="container mt-5">
       <div className="row">
@@ -13,17 +22,17 @@ function MainContent() {
       </div>
       <div className="row mt-3">
         <div className="col-12">
-          <img src="/images/graphic_design_is_my_passion.png" className="img-fluid" alt="Image Description" />
+          <img src={eventData[eventIndex].path} className="img-fluid" alt="Image Description" />
         </div>
       </div>
       <div className="row mt-3">
         <div className="col-12">
-          <p className="text-center">Description text goes here. You can add more details below the image.</p>
+          <p className="text-center">{eventData[eventIndex].details}</p>
         </div>
       </div>
       <div className="row mt-3">
         <div className="col-6">
-          <a href="#" className="btn btn-primary btn-block">Button 1</a>
+          <a href="#" className="btn btn-primary btn-block" onClick={incIndex(eventIndex, setEventIndex)}>Button 1</a>
         </div>
         <div className="col-6">
           <a href="#" className="btn btn-primary btn-block">Button 2</a>
@@ -33,10 +42,15 @@ function MainContent() {
     );
 }
 
+function incIndex(eventIndex: number, setEventIndex: SetEventIndex) {
+  return () => {setEventIndex(eventIndex++)}
+}
+
 const Homepage = () => {
+  let [eventIndex, setEventIndex] = useState(0);
     return (
         <>
-            <MainContent></MainContent>
+            <MainContent eventIndex={eventIndex} setEventIndex={setEventIndex}></MainContent>
         </>
     );
 }
