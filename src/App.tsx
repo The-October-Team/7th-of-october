@@ -1,19 +1,14 @@
-import React from 'react'
-import './styles.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import eventData from './data.json';
-import {useState} from 'react';
+import React from 'react';
+import './styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import eventsData from './data.json';
+import { useState } from 'react';
 
-interface Event {
-    details: string;
-    path: string;
-}
+type SetEventIndex = (index: number) => void;
 
-type SetEventIndex = (index: number)=>void
-
-function MainContent({ eventIndex, setEventIndex }: {eventIndex: number, setEventIndex: SetEventIndex}) {
-    return (
-      <div className="container mt-5">
+function MainContent({ eventIndex, setEventIndex }: { eventIndex: number, setEventIndex: SetEventIndex }) {
+  return (
+    <div className="container mt-5">
       <div className="row">
         <div className="col-12">
           <h1 className="text-center">Your Title</h1>
@@ -22,12 +17,12 @@ function MainContent({ eventIndex, setEventIndex }: {eventIndex: number, setEven
       </div>
       <div className="row mt-3">
         <div className="col-12">
-          <img src={eventData[eventIndex].path} className="img-fluid" alt="Image Description" />
+          <img src={eventsData[eventIndex].path} className="img-fluid" alt="Image Description" />
         </div>
       </div>
       <div className="row mt-3">
         <div className="col-12">
-          <p className="text-center">{eventData[eventIndex].details}</p>
+          <p className="text-center">{eventsData[eventIndex].details}</p>
         </div>
       </div>
       <div className="row mt-3">
@@ -39,20 +34,24 @@ function MainContent({ eventIndex, setEventIndex }: {eventIndex: number, setEven
         </div>
       </div>
     </div>
-    );
+  );
 }
 
 function incIndex(eventIndex: number, setEventIndex: SetEventIndex) {
-  return () => {setEventIndex(eventIndex++)}
+  return () => {
+    if (eventIndex + 1 >= eventsData.length)
+      return setEventIndex(0);
+    setEventIndex(eventIndex + 1);
+  }
 }
 
 const Homepage = () => {
   let [eventIndex, setEventIndex] = useState(0);
-    return (
-        <>
-            <MainContent eventIndex={eventIndex} setEventIndex={setEventIndex}></MainContent>
-        </>
-    );
+  return (
+    <>
+      <MainContent eventIndex={eventIndex} setEventIndex={setEventIndex}></MainContent>
+    </>
+  );
 }
 
 export default Homepage;
