@@ -94,7 +94,7 @@ function MainContent({
                                 strokeLinejoin="round"
                             />
                         </svg>
-                    </label>
+                    </label>                    
                     <p>
                         NSFL
                     </p>
