@@ -33,7 +33,7 @@ function MainContent({
                     />
                 </Col>
             </Row>
-            <Row className="mt-3">
+            <Row id="details">
                 <Col className="col-12">
                     <p className="text-center">
                         {eventsData[eventIndex].details}
@@ -41,7 +41,7 @@ function MainContent({
                 </Col>
             </Row>
             <Container className="text-center">
-                <Row className="mt-3">
+                <Row className="">
                     <Col>
                         <Button
                             href="#"

@@ -78,6 +78,10 @@
     background-color: var(--accent-green);
     font-weight: 300;
   }
+
+  #details {
+    background-color: #404040;
+  }
   
   .img-fluid {
     border-radius: 0.75rem;
