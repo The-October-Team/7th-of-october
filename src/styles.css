@@ -52,10 +52,12 @@
 
 #b1 {
     white-space: nowrap;
+    border-width: 0;
 }
 
 #b2 {
     white-space: nowrap;
+    border-width: 0;
 }
 
 .text-center {

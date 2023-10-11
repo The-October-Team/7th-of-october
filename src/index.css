@@ -25,7 +25,8 @@ code {
 }
 
 .text-center {
-  font-family: 'Secular One', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 .btn-primary {
@@ -35,10 +36,12 @@ code {
 
 #b1 {
   background-color: var(--accent-red);
+  font-weight: 300;
 }
 
 #b2 {
   background-color: var(--accent-green);
+  font-weight: 300;
 }
 
 .img-fluid {

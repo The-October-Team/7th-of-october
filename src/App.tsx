@@ -45,7 +45,7 @@ function MainContent({
                     <Col>
                         <Button
                             href="#"
-                            className="btn-primary btn-block rounded-pill"
+                            className="btn-primary btn-block shadow-none rounded-pill"
                             id="b2"
                         >
                             I&apos;ve seen enough.
@@ -54,13 +54,19 @@ function MainContent({
                     <Col>
                         <Button
                             href="#"
-                            className="btn-primary btn-block rounded-pill"
+                            className="btn-primary btn-block shadow-none rounded-pill"
                             onClick={incIndex(eventIndex, setEventIndex)}
                             id="b1"
                         >
                             Show me more
                         </Button>
                     </Col>
+                </Row>
+                <Row className="mt-3">
+                    <div className="form-check form-switch">
+                        <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">NSFL</label>
+                    </div>
                 </Row>
             </Container>
         </Container>
