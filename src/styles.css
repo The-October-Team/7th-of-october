@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .title {
     text-align: center;
     font-size: 3em;
@@ -23,4 +27,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.enough {
+    position: absolute;
+}
+
+.hashtag {
+    color: #C00000
+}
+
+#blood-img {
+    position: absolute;
+    transform: rotate(352deg);
+    top: 35rem;
+    right: -25rem;
+    z-index: -1;
+}
+
+.bullet-points li {
+    position: relative;
+    font-family: "Bahnschrift Condensed";
+    font-size: 1.25em;
+    font-weight: bold;
+    text-shadow: 0.1rem 0.1rem #ABABAB;
+}
+
+.enough p {
+    font-family: "Bahnschrift Condensed";
+    font-weight: bold;
+    text-shadow: 0.05rem 0.05rem #ABABAB;
+    font-size: 3em;
+}
+
+#trueface {
+    color: black;
+    font-family: "Impact";
+    text-shadow: 0.05rem 0.05rem #ABABAB;
+    font-size: 3em;
 }
