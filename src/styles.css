@@ -58,7 +58,8 @@
 
 #trueface {
     position: relative;
-    top: 10rem;
+    top: 5rem;
+    left: 1rem;
     color: black;
     font-family: "Impact";
     text-shadow: 0.05rem 0.05rem #ABABAB;
