@@ -2,6 +2,7 @@ import React from "react";
 import "../styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+
 function EnoughContent() {
     return (
         <div className="enough">
@@ -13,7 +14,7 @@ function EnoughContent() {
                 <li> DONATE TO THE FOLLOWING <a href="https://google.com/"> FUNDRAISERS </a> SUPPORTING THE SURVIVORS AND THE IDF </li>
                 <li> DON&apos;T FALL FOR THE RADICAL ISLAMIST PROPOGANDA, CHOOSE <u> THE RIGHT SIDE OF HISTORY </u> BEFORE MORE JEWISH BLOOD IS SPILT </li>
             </ul>
-            <img src="../images/blood.png" id="blood-img" />
+            <img src="../images/blood.png" id="blood-img" alt="blood" />
             <br />
             <Link id="trueface" to='/'>
                 TRUE FACE OF PALESTINE

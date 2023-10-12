@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@types/body-scroll-lock": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "eslint": "^8.51.0",
