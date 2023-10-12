@@ -69,6 +69,12 @@
     text-decoration: none;
 }
 
+.share-button {
+    position: relative;
+    left: 6.5rem;
+    margin-right: 0.5rem;
+}
+
 @media only screen and (min-width: 768px) {
     /* For desktop: */
     .bullet-points {

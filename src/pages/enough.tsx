@@ -24,12 +24,14 @@ function EnoughContent() {
                         title={"The true face of Palestine"}
                         url={"https://trueface.com/"}
                         hashtags={["TRUEFACEOFPALESTINE", "HAMASisISIS"]}
+                        className="share-button"
                     >
                         <TwitterIcon size={32} round />
                     </TwitterShareButton>
                     <WhatsappShareButton
                         title={"The true face of Palestine"}
                         url={"https://trueface.com/"}
+                        className="share-button"
                     >
                         <WhatsappIcon size={32} round />
                     </WhatsappShareButton>
