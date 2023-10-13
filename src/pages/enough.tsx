@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import { FacebookIcon, TwitterIcon } from "react-share";
+import { ReactComponent as HouseIcon } from "../images/house.svg";
 
 function EnoughContent() {
     return (
@@ -42,8 +43,8 @@ function EnoughContent() {
             </ul>
             <img src="../images/blood.png" id="blood-img" alt="blood" />
             <br />
-            <Link id="trueface" to='/'>
-                TRUE FACE OF PALESTINE
+            <Link to='/'>
+                <HouseIcon width={40} height={40} id="house-icon"/>
             </Link>
         </div>
     );

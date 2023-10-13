@@ -1,6 +1,15 @@
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
 .title {
     text-align: center;
     font-size: 3em;
+    color: white;
 }
 
 .subtitle {
@@ -29,10 +38,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    background-color: #404040;
 }
 
 .hashtag {
-    color: #C00000
+    color: #C00000;
+    text-shadow: 0.1rem 0.1rem #241b1b;
 }
 
 #blood-img {
@@ -40,7 +51,7 @@
     transform: rotate(352deg);
     top: 35rem;
     right: -30rem;
-    z-index: -1;
+    z-index: 1;
 }
 
 .bullet-points li {
@@ -48,7 +59,8 @@
     font-family: "Bahnschrift Condensed";
     font-size: 1.25em;
     font-weight: bold;
-    text-shadow: 0.1rem 0.1rem #ABABAB;
+    text-shadow: 0.1rem 0.1rem #000000;
+    color: white;
 }
 
 .enough p {
@@ -58,15 +70,11 @@
     font-size: 3em;
 }
 
-#trueface {
-    position: relative;
-    top: 5rem;
+#house-icon {
+    position: absolute;
+    bottom: 1rem;
     left: 1rem;
-    color: black;
-    font-family: "Impact";
-    text-shadow: 0.05rem 0.05rem #ABABAB;
-    font-size: 3em;
-    text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 
 .share-button {
@@ -76,16 +84,19 @@
 }
 
 @media only screen and (min-width: 768px) {
+
     /* For desktop: */
     .bullet-points {
         position: absolute;
         left: 20em;
     }
 
-    #trueface {
-        position: relative;
-        left: 50%;
-        right: 50%;
-        top: 0px;
+    html {
+        font-size: 20px;
+    }
+
+    #blood-img {
+        top: 35rem;
+        right: -20rem;
     }
 }
