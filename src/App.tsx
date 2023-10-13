@@ -3,6 +3,8 @@ import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Button, Col, Image } from "react-bootstrap";
 import eventsData from "./data.json";
+import { Routes, Route, Link } from "react-router-dom";
+import Enough from "./pages/enough";
 
 type SetEventIndex = (index: number) => void;
 
@@ -46,7 +48,7 @@ function MainContent({
                             onClick={incIndex(eventIndex, setEventIndex)}
                             id="b1"
                         >
-                            Button 1
+                            Show me more
                         </Button>
                     </Col>
                     <Col>
@@ -55,7 +57,9 @@ function MainContent({
                             className="btn-primary btn-block"
                             id="b2"
                         >
-                            Button 2
+                            <Link to='/enough'>
+                                Ive Seen Enough
+                            </Link>
                         </Button>
                     </Col>
                 </Row>
@@ -83,4 +87,13 @@ const Homepage = () => {
     );
 };
 
-export default Homepage;
+export default function App() {
+    return (
+        <div>
+            <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="enough" element={<Enough />} />
+            </Routes>
+        </div>
+    );
+}
