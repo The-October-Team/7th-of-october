@@ -1,18 +1,22 @@
 [
     {
         "details": "Details about 0",
-        "path": "/images/Plane.png"
+        "path": "/images/Plane.png",
+        "level": 50
     },
     {
         "details": "Detail about event :(",
-        "path": "/images/graphic_design_is_my_passion.png"
+        "path": "/images/graphic_design_is_my_passion.png",
+        "level": 50
     },
     {
         "details": "Details about second event",
-        "path": "/images/Plane.png"
+        "path": "/images/Plane.png",
+        "level": 50
     },
     {
         "details": "Detail about event 3",
-        "path": "/images/graphic_design_is_my_passion.png"
+        "path": "/images/graphic_design_is_my_passion.png",
+        "level": 50
     }
 ]

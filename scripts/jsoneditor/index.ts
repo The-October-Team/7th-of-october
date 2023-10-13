@@ -9,6 +9,13 @@ const DATA_JSON_PATH = `${__dirname}/../../src/data.json`;
 interface JsonEvent {
     details: string;
     path: string;
+    level: number;
+}
+
+interface AddBody {
+    password: string;
+    details: string;
+    level: string;
 }
 
 function main() {
@@ -27,14 +34,23 @@ function main() {
     });
 
     app.post("/add", async (req: Request, res: Response) => {
-        const body: Partial<{ password: string; details: string }> = {};
+        const body: Partial<AddBody> = {};
         req.pipe(req.busboy);
 
-        req.busboy.on("field", (name: keyof typeof body, val: string) => {
+        req.busboy.on("field", (name: keyof AddBody, val: string) => {
             body[name] = val;
         });
 
         req.busboy.on("file", async (fieldname, file, filename) => {
+            const level = Number(body.level);
+            if (!Number.isInteger(level) || level < 1 || level > 100) {
+                return res.status(400).json({
+                    status: "error",
+                    message:
+                        "Level is either not a number or out of range (1 <= level => 100)",
+                });
+            }
+
             if (body.password !== PASSWORD) {
                 return res
                     .status(401)
@@ -52,6 +68,7 @@ function main() {
                         path:
                             "/" +
                             relative(__dirname + "../../../public/", imagePath),
+                        level: level || 50,
                     };
                     const dataJson: Array<JsonEvent> = JSON.parse(
                         readFileSync(DATA_JSON_PATH).toString()
