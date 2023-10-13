@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 import eventsData from "./data.json";
+import Content from "./components/Content";
 
 type SetEventIndex = (index: number) => void;
 
@@ -18,11 +19,14 @@ function MainContent({
                 <p id="main-subtitle">Subtitle</p>
             </section>
             <main id="graphic-container">
-                <img
+                {/* <img
                     src={eventsData[eventIndex].path}
                     id="graphic"
                     alt="Image Description"
-                />
+                /> */}
+                <Content src={eventsData[eventIndex].path}
+                    isVideo={eventsData[eventIndex].isVideo}
+                    details={eventsData[eventIndex].details}></Content>
             </main>
             <p id="graphic-detail">
                 {eventsData[eventIndex].details}
