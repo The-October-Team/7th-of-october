@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import { FacebookIcon, TwitterIcon } from "react-share";
@@ -12,7 +11,7 @@ function EnoughContent() {
             <p className="title">WHAT CAN I DO?</p>
             <ul className="bullet-points">
                 <li> SUPPORT ISRAEL ONLINE USING THE HASHTAGS <span className="hashtag"> #TRUEFACEOFPALESTINE #HAMASisISIS </span ></li>
-                <li> SHARE THIS SITE TO SHOW THE WORLD THE ATROCITIES THE ISRAELI PEOPLE FACE <br />
+                <li> SHARE THIS SITE TO SHOW THE WORLD THE ATROCITIES THE ISRAELI PEOPLE FACE <br/>
                     <FacebookShareButton
                         url={"https://trueface.com/"}
                         quote={"Learn more about how Hamas Is Isis!"}
@@ -44,7 +43,7 @@ function EnoughContent() {
             <img src="../images/blood.png" id="blood-img" alt="blood" />
             <br />
             <Link to='/'>
-                <HouseIcon width={40} height={40} id="house-icon" />
+                <HouseIcon width={40} height={40} id="house-icon"/>
             </Link>
         </div>
     );

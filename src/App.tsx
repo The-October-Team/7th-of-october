@@ -1,87 +1,135 @@
 import React, { useState } from "react";
-import "./styles.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Button, Col, Image } from "react-bootstrap";
 import eventsData from "./data.json";
 import { Routes, Route, Link } from "react-router-dom";
 import Enough from "./pages/enough";
 import Fundraisers from "./pages/fundraisers";
+import "./styles.css";
+import Content from "./components/Content";
+
 
 type SetEventIndex = (index: number) => void;
+type SetContentWarning = (index: boolean) => void;
+const MEAN_STEP = Math.floor(eventsData.length / 12);
 
 function MainContent({
     eventIndex,
+    contentWarning,
     setEventIndex,
+    setContentWarning,
 }: {
     eventIndex: number;
+    contentWarning: boolean;
     setEventIndex: SetEventIndex;
+    setContentWarning: SetContentWarning;
 }) {
+
+
     return (
-        <Container className="mt-5">
-            <Row>
-                <Col className="col-12">
-                    <h1 className="text-center">Your Title</h1>
-                    <h2 className="text-center">Subtitle</h2>
-                </Col>
-            </Row>
-            <Row className="mt-3">
-                <Col className="col-12">
-                    <Image
-                        src={eventsData[eventIndex].path}
-                        className="img-fluid"
-                        alt="Image Description"
-                    />
-                </Col>
-            </Row>
-            <Row className="mt-3">
-                <Col className="col-12">
-                    <p className="text-center">
-                        {eventsData[eventIndex].details}
-                    </p>
-                </Col>
-            </Row>
-            <Container className="text-center">
-                <Row className="mt-3">
-                    <Col>
-                        <Button
-                            href="#"
-                            className="btn-primary btn-block"
-                            onClick={incIndex(eventIndex, setEventIndex)}
-                            id="b1"
-                        >
-                            Show me more
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button
-                            href="#"
-                            className="btn-primary btn-block"
-                            id="b2"
-                        >
-                            <Link to='/enough'>
-                                Ive Seen Enough
-                            </Link>
-                        </Button>
-                    </Col>
-                </Row>
-            </Container>
-        </Container>
+        <div id="page-container">
+            <section id="title-container">
+                <p id="main-title">
+                    <span>true face of</span> palestine
+                </p>
+                <p id="main-subtitle">
+                    IN THE PAST FEW DAYS, HAMAS TERRORISTS TOOK OVER ISRAELI
+                    TOWNS. THE IMAGES BELOW ARE THE AFTERMATH OF THEIR BRUTAL
+                    ATTACK.
+                </p>
+            </section>
+            <main id="graphic-container">
+                {contentWarning && (
+                    <>
+                        <div id="blur" />
+                        <div id="warning-containter">
+                            <img id="eye" src="../images/eye.png" />
+                            <p
+                                id="content-warning"
+                                onClick={disableWarning(
+                                    contentWarning,
+                                    setContentWarning
+                                )}
+                            >
+                                CONTENT WARNING: EXTREME VIOLENCE
+                                <br />
+                                SHOW
+                            </p>
+                        </div>
+                    </>
+                )}
+                <div id="fade-top" />
+                {/* <img
+                    src={eventsData[eventIndex].path}
+                    id="graphic"
+                    alt="Image Description"
+                /> */}
+                <Content
+                    src={eventsData[eventIndex].path}
+                    details={eventsData[eventIndex].details} />
+                <div id="fade-bottom" />
+            </main>
+            <p id="graphic-detail">{eventsData[eventIndex].details}</p>
+            <div className="btn-container">
+                <button
+                    onClick={incIndex(eventIndex, setEventIndex)}
+                    id="btn-show-me-more"
+                >
+                    SHOW ME MORE
+                </button>
+                <button id="btn-ive-seen-enough">
+                    <Link id="enough-link" to='/enough'>
+                        I&apos;VE SEEN ENOUGH
+                    </Link></button>
+            </div>
+        </div>
     );
 }
 
 function incIndex(eventIndex: number, setEventIndex: SetEventIndex) {
     return () => {
-        if (eventIndex + 1 >= eventsData.length) return setEventIndex(0);
-        setEventIndex(eventIndex + 1);
+        const step = Math.ceil(Math.random() * MEAN_STEP * 2);
+        if (eventIndex + step >= eventsData.length) {
+            let i = 0;
+            for (i = eventsData.length - 2; i >= 0; --i) {
+                if (
+                    eventsData[i].level !=
+                    eventsData[eventsData.length - 1].level
+                ) {
+                    break;
+                }
+            }
+            if (i == eventIndex) {
+                if (i + 1 < eventsData.length) {
+                    ++i;
+                } else if (i > 0) {
+                    --i;
+                }
+            }
+            setEventIndex(i);
+            return;
+        }
+        setEventIndex(eventIndex + step);
+    };
+}
+
+function disableWarning(
+    contentWarning: boolean,
+    setContentWarning: SetContentWarning
+) {
+    return () => {
+        setContentWarning(false);
     };
 }
 
 const Homepage = () => {
     const [eventIndex, setEventIndex] = useState(0);
+    const [contentWarning, setContentWarning] = useState(true);
+
     return (
         <>
             <MainContent
                 eventIndex={eventIndex}
+                contentWarning={contentWarning}
+                setContentWarning={setContentWarning}
                 setEventIndex={setEventIndex}
             ></MainContent>
         </>
