@@ -4,6 +4,7 @@ import eventsData from "./data.json";
 
 type SetEventIndex = (index: number) => void;
 type SetContentWarning = (index: boolean) => void;
+const MEAN_STEP = Math.floor(eventsData.length / 12);
 
 function MainContent({
     eventIndex,
@@ -69,8 +70,22 @@ function MainContent({
 
 function incIndex(eventIndex: number, setEventIndex: SetEventIndex) {
     return () => {
-        if (eventIndex + 1 >= eventsData.length) return setEventIndex(0);
-        setEventIndex(eventIndex + 1);
+        const step = Math.ceil(Math.random() * MEAN_STEP * 2);
+        if (eventIndex + step >= eventsData.length){
+            let i = 0;
+            for (i = eventsData.length-2 ; i >= 0 ; --i){
+                if (eventsData[i].level != eventsData[eventsData.length-1].level){
+                    break;
+                }
+            }
+            if (i == eventIndex){
+                if (i+1 < eventsData.length) { ++i; }
+                else if (i > 0) { --i; }
+            }
+            setEventIndex(i);
+            return;
+        }
+        setEventIndex(eventIndex + step);
     };
 }
 
