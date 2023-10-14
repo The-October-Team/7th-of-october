@@ -3,6 +3,7 @@ import "../styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { ReactComponent as HouseIcon } from "../images/house.svg";
+import { ReactComponent as InfoCircle } from "../images/info-circle.svg";
 
 function FundraisersContent() {
     return (
@@ -30,6 +31,9 @@ function FundraisersContent() {
             <img src="../images/Star_of_David.png" id="star-of-david" />
             <Link to='/'>
                 <HouseIcon width={40} height={40} id="house-icon" />
+            </Link>
+            <Link to='/enough'>
+                <InfoCircle width={40} height={40} id="info-circle" />
             </Link>
         </div>
     );

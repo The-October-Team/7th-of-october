@@ -113,6 +113,13 @@ body {
     color: rgb(0, 0, 0);
 }
 
+#info-circle {
+    position: absolute;
+    bottom: 1rem;
+    left: 5rem;
+    color: rgb(0, 0, 0);
+}
+
 .share-button {
     position: relative;
     left: 6.5rem;
