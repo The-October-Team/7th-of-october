@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import { FacebookIcon, TwitterIcon } from "react-share";
