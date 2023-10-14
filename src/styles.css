@@ -29,8 +29,7 @@ body {
 }
 
 /* blood */
-#page-container::after {
-    content: url("../public/images/blood-2.png");
+#blood-image {
     position: absolute;
     transform: scaley(-1) scale(0.4) translate(30%, 80%);
     z-index: 3;
