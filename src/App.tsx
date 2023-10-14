@@ -26,7 +26,9 @@ function MainContent({
 
     return (
         <div id="page-container">
-            <section id="title-container">
+            {contentWarning &&
+                <img src="../images/blood-2.png" id="blood-image" />}
+            {contentWarning && <section id="title-container">
                 <p id="main-title">
                     <span>true face of</span> palestine
                 </p>
@@ -35,7 +37,7 @@ function MainContent({
                     TOWNS. THE IMAGES BELOW ARE THE AFTERMATH OF THEIR BRUTAL
                     ATTACK.
                 </p>
-            </section>
+            </section>}
             <main id="graphic-container">
                 {contentWarning && (
                     <>
