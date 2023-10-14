@@ -37,7 +37,7 @@ function EnoughContent() {
                     </WhatsappShareButton>
                 </li>
                 <li> READ ABOUT <a href="https://en.wikipedia.org/wiki/Israeli%E2%80%93Palestinian_conflict"> THE CONFLICT </a> AND HOW PALESTINIAN LEADERSHIP ALWAYS DESTROYS THE PEACE PROCESS </li>
-                <li> DONATE TO THE FOLLOWING <a href="https://google.com/"> FUNDRAISERS </a> SUPPORTING THE SURVIVORS AND THE IDF </li>
+                <li> DONATE TO THE FOLLOWING <Link to='/fundraisers'> FUNDRAISERS </Link> SUPPORTING THE SURVIVORS AND THE IDF </li>
                 <li> DON&apos;T FALL FOR THE RADICAL ISLAMIST PROPOGANDA, CHOOSE <u> THE RIGHT SIDE OF HISTORY </u> BEFORE MORE BLOOD IS SPILT </li>
             </ul>
             <img src="../images/blood.png" id="blood-img" alt="blood" />

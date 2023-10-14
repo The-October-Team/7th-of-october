@@ -76,3 +76,4 @@ yarn-error.log*
 .next/types/package.json
 .next/types/app/layout.ts
 .next/types/app/page.ts
+next-env.d.ts

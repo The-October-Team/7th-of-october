@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import eventsData from "./data.json";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Enough from "./pages/enough";
 import "./styles.css";
 import Content from "./components/Content";
+
 
 type SetEventIndex = (index: number) => void;
 type SetContentWarning = (index: boolean) => void;
@@ -73,7 +74,7 @@ function MainContent({
                 >
                     SHOW ME MORE
                 </button>
-                <button id="btn-ive-seen-enough">I&apos;VE SEEN ENOUGH</button>
+              <button id="btn-ive-seen-enough"><Link to='/enough'> I&apos;VE SEEN ENOUGH </Link></button>
             </div>
         </div>
     );
@@ -137,6 +138,7 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path="enough" element={<Enough />} />
+                <Route path="fundraisers" element={<Fundraisers />} />
             </Routes>
         </div>
     );
