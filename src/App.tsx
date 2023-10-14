@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import eventsData from "./data.json";
 import { Routes, Route, Link } from "react-router-dom";
 import Enough from "./pages/enough";
+import Fundraisers from "./pages/fundraisers";
 import "./styles.css";
 import Content from "./components/Content";
 
@@ -74,7 +75,10 @@ function MainContent({
                 >
                     SHOW ME MORE
                 </button>
-              <button id="btn-ive-seen-enough"><Link to='/enough'> I&apos;VE SEEN ENOUGH </Link></button>
+                <button id="btn-ive-seen-enough">
+                    <Link id="enough-link" to='/enough'>
+                        I&apos;VE SEEN ENOUGH
+                    </Link></button>
             </div>
         </div>
     );
