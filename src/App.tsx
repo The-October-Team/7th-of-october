@@ -5,6 +5,7 @@ import { Container, Row, Button, Col, Image } from "react-bootstrap";
 import eventsData from "./data.json";
 import { Routes, Route, Link } from "react-router-dom";
 import Enough from "./pages/enough";
+import Fundraisers from "./pages/fundraisers";
 
 type SetEventIndex = (index: number) => void;
 
@@ -93,6 +94,7 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path="enough" element={<Enough />} />
+                <Route path="fundraisers" element={<Fundraisers />} />
             </Routes>
         </div>
     );
