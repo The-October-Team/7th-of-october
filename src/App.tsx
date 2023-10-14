@@ -3,6 +3,7 @@ import eventsData from "./data.json";
 import { Routes, Route } from "react-router-dom";
 import Enough from "./pages/enough";
 import "./styles.css";
+import Content from "./components/Content";
 
 type SetEventIndex = (index: number) => void;
 type SetContentWarning = (index: boolean) => void;
@@ -19,6 +20,8 @@ function MainContent({
     setEventIndex: SetEventIndex;
     setContentWarning: SetContentWarning;
 }) {
+    
+
     return (
         <div id="page-container">
             <section id="title-container">
@@ -52,11 +55,14 @@ function MainContent({
                     </>
                 )}
                 <div id="fade-top" />
-                <img
+                 {/* <img
                     src={eventsData[eventIndex].path}
                     id="graphic"
                     alt="Image Description"
-                />
+                /> */}
+                <Content
+                    src={eventsData[eventIndex].path}
+                    details={eventsData[eventIndex].details} />
                 <div id="fade-bottom" />
             </main>
             <p id="graphic-detail">{eventsData[eventIndex].details}</p>
