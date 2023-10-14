@@ -1,8 +1,17 @@
 /* Lato font */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Secular+One&family=Suez+One&display=swap');
 
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: var(--primary);
+}
+
 :root {
-    --primary: #202528;
+    --primary: #000000;
     --text: #fefefe;
     --accent-red: #ae3434;
     --accent-green: #3eae34;
@@ -14,33 +23,26 @@
     box-sizing: border-box;
 }
 
-body {
-    max-width: 100%;
-    max-height: 100vh;
-    background-color: var(--primary);
+#root {
+    overflow: hidden;
 }
 
-/* Top text */
-#page-container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 100%;
-    max-height: 100%;
-    row-gap: 4vw;
-    margin: auto;
+/* blood */
+#page-container::after {
+    content: url("../public/images/blood-2.png");
+    position: absolute;
+    transform: scaley(-1) scale(0.4) translate(24%, 80%);
+    z-index: 3;
 }
 
 #title-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    text-align: left;
     color: var(--text);
-    font-family: 'Lato', sans-serif;
-    padding: 2rem 2rem 0;
+    padding: 1rem;
+    gap: 0.25rem;
+    z-index: 4;
 }
 
 #title-container > * {
@@ -49,80 +51,163 @@ body {
 }
 
 #main-title {
-    font-size: 3rem;
-    letter-spacing: 0.1rem;
+    font-family: Impact;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 0.05rem;
+    z-index: 99;
+}
+
+#main-title > span {
+    font-size: 0.75em;
 }
 
 #main-subtitle {
-    font-size: 1.5rem;
-    padding: 0.4rem 3rem;
-    border-radius: 0.75rem;
+    font-family: Impact;
+    font-size: 1rem;
+}
+
+/* Top text */
+#page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+.title {
+    text-align: center;
+    font-size: 3em;
+    color: white;
+}
+
+#fade-top {
+    position: absolute;
+    background: linear-gradient(to bottom, black 15%, rgba(0, 0, 0, 0) 20%);
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+}
+
+#fade-bottom {
+    position: absolute;
+    background: linear-gradient(to top, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0) 10%);
+    bottom: 9%;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
 }
 
 /* graphic */
 #graphic-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    min-width: 15rem;
     width: 100%;
-    aspect-ratio: 1/1;
+    height: 100%;
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--text);
-    border-radius: 0.75rem;
 }
 
+
 #graphic {
-    max-height: 90%;
-    max-width: 90%;
-    border-radius: 0.5rem;
-    margin-block: auto;
-    box-shadow: 0 0 0.5rem rgba(255,255,255, 0.25);
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 1;
+    /*box-shadow: 0 0 0.5rem rgba(255,255,255, 0.25);*/
 }
 
 #graphic-detail {
+    position: absolute;
+    bottom: 20%;
     width: fit-content;
+    max-width: 60%;
     text-align: center;
-    font-family: 'Lato', sans-serif;
+    font-family: "Bahnschrift Condensed";
     color: var(--text);
     font-size: 4.5vw;
-    margin-block: auto 0 0;
-    width: 85%;
+    margin-block: auto;
+    z-index: 3;
+    background-color: rgba(0,0,0,.8);
+    padding: 0.25rem 2rem;
+    border-radius: 0.25rem;;
+}
+
+#blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    backdrop-filter: blur(1rem);
+
+}
+
+#warning-containter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 4;
+    position: absolute;
+    top: 50%;
+    color: var(--text);
+}
+
+#eye {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+#content-warning {
+    text-align: center;
+    font-family: "Bahnschrift Condensed";
+    font-size: 1.2rem;
 }
 
 /* Buttons */
 .btn-container {
     display: flex;
-    gap: 10%;
-    justify-content: space-evenly;
-    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    gap: 0.75rem;
+    padding-block: 1rem;
+    z-index: 99;
 }
 
 .btn-container > * {
-    padding: 2vw 4vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.75rem 2rem;
     border-radius: 100vw;
     border: 0;
     width: fit-content;
     text-align: center;
     font-family: 'Lato', sans-serif;
     color: white;
-    font-size: 4vw;
-    white-space: nowrap;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 8vh;
+    font-size: 1rem;
 }
 
 #btn-ive-seen-enough {
-    background-color: var(--accent-green);
+    background-color: #830503;
+    font-family: "Bahnschrift Condensed";
+    padding: 0.5rem 1rem;
 }
 
 #btn-show-me-more {
-    background-color: var(--accent-red);
+    background-color: #830503;
+    font-family: "Bahnschrift Condensed";
+    font-size: 1.5rem;
+    line-height: 1.2rem;
 }
 
 /* nsfw */
@@ -202,4 +287,76 @@ body {
     color: var(--text);
     font-size: 1.25rem;
     height: fit-content;
+    z-index: 4;
+}
+
+.enough {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #404040;
+}
+
+.hashtag {
+    color: #C00000;
+    text-shadow: 0.1rem 0.1rem #241b1b;
+}
+
+#blood-img {
+    position: absolute;
+    transform: rotate(352deg);
+    top: 35rem;
+    right: -30rem;
+    z-index: 1;
+}
+
+.bullet-points li {
+    position: relative;
+    font-family: "Bahnschrift Condensed";
+    font-size: 1.25em;
+    font-weight: bold;
+    text-shadow: 0.1rem 0.1rem #000000;
+    color: white;
+}
+
+.enough p {
+    font-family: "Bahnschrift Condensed";
+    font-weight: bold;
+    text-shadow: 0.05rem 0.05rem #ABABAB;
+    font-size: 3em;
+}
+
+#house-icon {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+.share-button {
+    position: relative;
+    left: 6.5rem;
+    margin-right: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* For desktop: */
+    #nsfw-label {
+        /*width: 400px;*/
+    }
+
+    .bullet-points {
+        position: absolute;
+        left: 20em;
+    }
+
+    html {
+        font-size: 20px;
+    }
+
+    #blood-img {
+        top: 35rem;
+        right: -20rem;
+    }
 }

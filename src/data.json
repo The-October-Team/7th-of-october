@@ -1,18 +1,81 @@
 [
     {
-        "details": "Details about 0",
-        "path": "/images/Plane.png"
+        "details": "1",
+        "path": "/images/Plane.png",
+        "level": 1
     },
     {
-        "details": "Detail about event :(",
-        "path": "/images/image.png"
+        "details": "2",
+        "path": "/images/image.png",
+        "level": 2
     },
     {
         "details": "Details about second event",
         "path": "/images/sopranos.mkv"
     },
     {
-        "details": "Detail about event 3",
-        "path": "/images/graphic_design_is_my_passion.png"
+        "details": "4",
+        "path": "/images/graphic_design_is_my_passion.png",
+        "level": 2
+    },
+    {
+        "details": "5",
+        "path": "/images/Plane.png",
+        "level": 2
+    },
+    {
+        "details": "6",
+        "path": "/images/image.png",
+        "level": 2
+    },
+    {
+        "details": "7",
+        "path": "/images/Plane.png",
+        "level": 2
+    },
+    {
+        "details": "8",
+        "path": "/images/graphic_design_is_my_passion.png",
+        "level": 2
+    },
+    {
+        "details": "9",
+        "path": "/images/Plane.png",
+        "level": 2
+    },
+    {
+        "details": "10",
+        "path": "/images/image.png",
+        "level": 2
+    },
+    {
+        "details": "11",
+        "path": "/images/Plane.png",
+        "level": 2
+    },
+    {
+        "details": "12",
+        "path": "/images/graphic_design_is_my_passion.png",
+        "level": 3
+    },
+    {
+        "details": "13",
+        "path": "/images/Plane.png",
+        "level": 3
+    },
+    {
+        "details": "14",
+        "path": "/images/image.png",
+        "level": 3
+    },
+    {
+        "details": "15",
+        "path": "/images/Plane.png",
+        "level": 3
+    },
+    {
+        "details": "16",
+        "path": "/images/graphic_design_is_my_passion.png",
+        "level": 3
     }
 ]
