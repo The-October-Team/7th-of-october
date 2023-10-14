@@ -117,7 +117,7 @@ function FundraisersContent() {
             </section>
             <img src="../images/Star_of_David.png" id="star-of-david" />
             <Link to="/">
-                <HouseIcon width={40} height={40} id="house-icon" />
+                <HouseIcon width={100} height={100} id="house-icon" />
             </Link>
         </div>
     );

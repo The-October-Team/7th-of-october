@@ -19,6 +19,7 @@ body {
     color: #fefefe;
     gap: .8rem;
     margin-top: 1rem;
+
 }
 
 .fundraisers > section {
@@ -30,6 +31,10 @@ body {
     gap: 0.25rem;
 }
 
+/* .fundraisers:nth-child(4) {
+    margin-bottom: 20rem
+} */
+
 .fundraiser-category {
     display: grid;
     grid-template-columns: repeat(3,  1fr);
@@ -40,6 +45,9 @@ body {
 }
 
 .donate-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     font-size: .92rem;
     color: #fefefe;
@@ -90,5 +98,11 @@ body {
     position: fixed;
     bottom: 1rem;
     left: 1rem;
-    color: rgb(0, 0, 0);
+    /* color: rgb(0, 0, 0); */
+    background-color: black;
+    fill: #fefefe;
+    padding: 0.5rem;
+    border-radius: 25%;
+    width: 4rem;
+    height: 4rem;
 }
