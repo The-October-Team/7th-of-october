@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./styles.css";
 import eventsData from "./data.json";
+import { Routes, Route, Link } from "react-router-dom";
+import Enough from "./pages/enough";
 
 type SetEventIndex = (index: number) => void;
 type SetContentWarning = (index: boolean) => void;
@@ -123,4 +125,13 @@ const Homepage = () => {
     );
 };
 
-export default Homepage;
+export default function App() {
+    return (
+        <div>
+            <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="enough" element={<Enough />} />
+            </Routes>
+        </div>
+    );
+}
