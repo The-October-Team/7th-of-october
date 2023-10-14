@@ -25,23 +25,8 @@ code {
 }
 
 .text-center {
-  font-family: 'Secular One', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
-.btn-primary {
-  border-radius: 100vh;
-  padding: 0.5rem 1.25rem;
-}
-
-#b1 {
-  background-color: var(--accent-red);
-}
-
-#b2 {
-  background-color: var(--accent-green);
-}
-
-.img-fluid {
-  border-radius: 0.75rem;
-}
 
