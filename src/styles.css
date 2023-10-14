@@ -1,5 +1,6 @@
 /* Lato font */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Secular+One&family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton');
 
 html,
 body {
@@ -51,7 +52,7 @@ body {
 }
 
 #main-title {
-    font-family: Impact;
+    font-family: "Anton";
     text-transform: uppercase;
     font-size: 2.5rem;
     letter-spacing: 0.05rem;
@@ -63,7 +64,7 @@ body {
 }
 
 #main-subtitle {
-    font-family: Impact;
+    font-family: "Anton";
     font-size: 1rem;
 }
 
@@ -127,7 +128,7 @@ body {
     width: fit-content;
     max-width: 60%;
     text-align: center;
-    font-family: "Bahnschrift Condensed";
+    font-family: "Anton";
     color: var(--text);
     font-size: 4.5vw;
     margin-block: auto;
@@ -167,7 +168,7 @@ body {
 
 #content-warning {
     text-align: center;
-    font-family: "Bahnschrift Condensed";
+    font-family: "Anton";
     font-size: 1.2rem;
 }
 
@@ -199,13 +200,13 @@ body {
 
 #btn-ive-seen-enough {
     background-color: #830503;
-    font-family: "Bahnschrift Condensed";
+    font-family: "Anton";
     padding: 0.5rem 1rem;
 }
 
 #btn-show-me-more {
     background-color: #830503;
-    font-family: "Bahnschrift Condensed";
+    font-family: "Anton";
     font-size: 1.5rem;
     line-height: 1.2rem;
 }
@@ -312,7 +313,7 @@ body {
 
 .bullet-points li {
     position: relative;
-    font-family: "Bahnschrift Condensed";
+    font-family: "Anton";
     font-size: 1.25em;
     font-weight: bold;
     text-shadow: 0.1rem 0.1rem #000000;
@@ -320,7 +321,7 @@ body {
 }
 
 .enough p {
-    font-family: "Bahnschrift Condensed";
+    font-family: "Anton";
     font-weight: bold;
     text-shadow: 0.05rem 0.05rem #ABABAB;
     font-size: 3em;
