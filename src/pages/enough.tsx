@@ -7,6 +7,8 @@ import { FacebookIcon, TwitterIcon } from "react-share";
 import { ReactComponent as HouseIcon } from "../images/house.svg";
 
 function EnoughContent() {
+    document.body.style.position = "fixed";
+
     return (
         <div className="enough">
             <p className="title">WHAT CAN I DO?</p>

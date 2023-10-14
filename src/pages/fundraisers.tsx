@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../fundraisers.css";
 import { Link } from "react-router-dom";
 import { ReactComponent as HouseIcon } from "../images/house.svg";

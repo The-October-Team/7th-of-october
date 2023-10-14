@@ -4,8 +4,12 @@
     box-sizing: border-box;
 }
 
+html,
 body {
+    scroll-behavior: smooth;
     background-color: #fefefe;
+    height: 100%;
+    width: 100%;
 }
 
 .fundraisers {
@@ -63,13 +67,14 @@ body {
     filter: opacity(0.25);
     z-index: -1;
 }
-.subtitle {
+.fundraisers .subtitle {
     color: black;
     font-size: 1.1rem;
     font-weight: 700;
+    margin: 0;
 }
 
-.title {
+.fundraisers > .title {
     font-weight: 800;
     font-size: 3rem;
     line-height: 2.25rem;
