@@ -12,6 +12,8 @@ function MainContent({
     eventIndex: number;
     setEventIndex: SetEventIndex;
 }) {
+    
+
     return (
         <div id="page-container">
             <section id="title-container">
@@ -24,9 +26,9 @@ function MainContent({
                     id="graphic"
                     alt="Image Description"
                 /> */}
-                <Content src={eventsData[eventIndex].path}
-                    isVideo={eventsData[eventIndex].isVideo}
-                    details={eventsData[eventIndex].details}></Content>
+                <Content
+                    src={eventsData[eventIndex].path}
+                    details={eventsData[eventIndex].details} />
             </main>
             <p id="graphic-detail">
                 {eventsData[eventIndex].details}
@@ -96,9 +98,7 @@ function incIndex(eventIndex: number, setEventIndex: SetEventIndex) {
 const Homepage = () => {
     const [eventIndex, setEventIndex] = useState(0);
     return (
-        <>
-            <MainContent eventIndex={eventIndex} setEventIndex={setEventIndex}></MainContent>
-        </>
+        <MainContent eventIndex={eventIndex} setEventIndex={setEventIndex} />
     );
 };
 

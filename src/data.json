@@ -1,22 +1,18 @@
 [
     {
         "details": "Details about 0",
-        "path": "/images/Plane.png",
-        "isVideo": false
+        "path": "/images/Plane.png"
     },
     {
         "details": "Detail about event :(",
-        "path": "/images/image.png",
-        "isVideo": false
+        "path": "/images/image.png"
     },
     {
         "details": "Details about second event",
-        "path": "/images/sopranos.mkv",
-        "isVideo": true
+        "path": "/images/sopranos.mkv"
     },
     {
         "details": "Detail about event 3",
-        "path": "/images/graphic_design_is_my_passion.png",
-        "isVideo": false
+        "path": "/images/graphic_design_is_my_passion.png"
     }
 ]
