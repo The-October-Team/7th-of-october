@@ -10,7 +10,7 @@ function MainContent({
     eventIndex,
     contentWarning,
     setEventIndex,
-    setContentWarning
+    setContentWarning,
 }: {
     eventIndex: number;
     contentWarning: boolean;
@@ -19,26 +19,36 @@ function MainContent({
 }) {
     return (
         <div id="page-container">
-            <img src="../images/blood-2.png" id="blood-img-2" alt="blood" />
             <section id="title-container">
-                <p id="main-title">TRUE FACE <br /> OF PALESTINE </p>
-                <p id="main-subtitle">IN THE PAST FEW DAYS, HAMAS TERRORISTS TOOK OVER ISRAELI TOWNS. THE IMAGES BELOW ARE THE AFTERMATH OF THEIR BRUTAL ATTACK.</p>
+                <p id="main-title">
+                    <span>true face of</span> palestine
+                </p>
+                <p id="main-subtitle">
+                    IN THE PAST FEW DAYS, HAMAS TERRORISTS TOOK OVER ISRAELI
+                    TOWNS. THE IMAGES BELOW ARE THE AFTERMATH OF THEIR BRUTAL
+                    ATTACK.
+                </p>
             </section>
             <main id="graphic-container">
-                {contentWarning &&
-                    <div id="blur" />}
-                {contentWarning &&
-                    <div id="warning-containter">
-                        <img id="eye" src="../images/eye.png" />
-                        <p
-                            id="content-warning"
-                            onClick={disableWarning(contentWarning, setContentWarning)}
-                        >
-                            CONTENT WARNING: EXTREME VIOLENCE
-                            <br />
-                            SHOW
-                        </p>
-                    </div>}
+                {contentWarning && (
+                    <>
+                        <div id="blur" />
+                        <div id="warning-containter">
+                            <img id="eye" src="../images/eye.png" />
+                            <p
+                                id="content-warning"
+                                onClick={disableWarning(
+                                    contentWarning,
+                                    setContentWarning
+                                )}
+                            >
+                                CONTENT WARNING: EXTREME VIOLENCE
+                                <br />
+                                SHOW
+                            </p>
+                        </div>
+                    </>
+                )}
                 <div id="fade-top" />
                 <img
                     src={eventsData[eventIndex].path}
@@ -47,9 +57,7 @@ function MainContent({
                 />
                 <div id="fade-bottom" />
             </main>
-            <p id="graphic-detail">
-                {eventsData[eventIndex].details}
-            </p>
+            <p id="graphic-detail">{eventsData[eventIndex].details}</p>
             <div className="btn-container">
                 <button
                     onClick={incIndex(eventIndex, setEventIndex)}
@@ -57,30 +65,31 @@ function MainContent({
                 >
                     SHOW ME MORE
                 </button>
-                <button
-                    id="btn-ive-seen-enough"
-                >
-                    I&apos;VE SEEN ENOUGH
-                </button>
+                <button id="btn-ive-seen-enough">I&apos;VE SEEN ENOUGH</button>
             </div>
         </div>
     );
 }
 
-
 function incIndex(eventIndex: number, setEventIndex: SetEventIndex) {
     return () => {
         const step = Math.ceil(Math.random() * MEAN_STEP * 2);
-        if (eventIndex + step >= eventsData.length){
+        if (eventIndex + step >= eventsData.length) {
             let i = 0;
-            for (i = eventsData.length-2 ; i >= 0 ; --i){
-                if (eventsData[i].level != eventsData[eventsData.length-1].level){
+            for (i = eventsData.length - 2; i >= 0; --i) {
+                if (
+                    eventsData[i].level !=
+                    eventsData[eventsData.length - 1].level
+                ) {
                     break;
                 }
             }
-            if (i == eventIndex){
-                if (i+1 < eventsData.length) { ++i; }
-                else if (i > 0) { --i; }
+            if (i == eventIndex) {
+                if (i + 1 < eventsData.length) {
+                    ++i;
+                } else if (i > 0) {
+                    --i;
+                }
             }
             setEventIndex(i);
             return;
@@ -89,7 +98,10 @@ function incIndex(eventIndex: number, setEventIndex: SetEventIndex) {
     };
 }
 
-function disableWarning(contentWarning: boolean, setContentWarning: SetContentWarning) {
+function disableWarning(
+    contentWarning: boolean,
+    setContentWarning: SetContentWarning
+) {
     return () => {
         setContentWarning(false);
     };
@@ -101,7 +113,12 @@ const Homepage = () => {
 
     return (
         <>
-            <MainContent eventIndex={eventIndex} contentWarning={contentWarning} setContentWarning={setContentWarning} setEventIndex={setEventIndex}></MainContent>
+            <MainContent
+                eventIndex={eventIndex}
+                contentWarning={contentWarning}
+                setContentWarning={setContentWarning}
+                setEventIndex={setEventIndex}
+            ></MainContent>
         </>
     );
 };
