@@ -32,7 +32,7 @@ body {
 #page-container::after {
     content: url("../public/images/blood-2.png");
     position: absolute;
-    transform: scaley(-1) scale(0.4) translate(24%, 80%);
+    transform: scaley(-1) scale(0.4) translate(30%, 80%);
     z-index: 3;
 }
 
@@ -355,6 +355,12 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+
+    /* mgome page blood */
+    #page-container::after {
+        opacity: 0%;
+    }
+
     .bullet-points {
         position: absolute;
         left: 20em;
