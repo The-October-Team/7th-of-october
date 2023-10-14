@@ -1,20 +1,14 @@
 html,
 body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    position: fixed;
+    /* overflow: hidden; */
+    
+    /* position: fixed; */
 }
 
 .title {
     text-align: center;
     font-size: 3em;
     color: black;
-}
-
-.subtitle {
-    text-align: center;
-    font-size: 2em;
 }
 
 .main-img {
@@ -69,20 +63,6 @@ body {
     font-size: 3em;
 }
 
-.fundraisers{
-    text-align: center;
-}
-.fundraisers > p {
-    margin-block-end: 0.2em;
-}
-
-.fundraisers > .title {
-    font-family: "Bahnschrift Condensed";
-    font-weight: bold;
-    text-shadow: 0.05rem 0.05rem #ABABAB;
-    font-size: 3em;
-    color: blue;
-}
 
 .fundraisers > .subtitle {
     font-family: "Bahnschrift Condensed";
@@ -92,26 +72,6 @@ body {
     color: black;
 }
 
-.donate-link {
-    font-family: "Bahnschrift Condensed";
-    text-align: center;
-    font-weight: bold;
-    text-shadow: 0.05rem 0.05rem #ABABAB;
-    font-size: 1.2em;
-    color: black;
-}
-
-#star-of-david {
-    bottom: 1rem;
-    width: 5rem;
-}
-
-#house-icon {
-    position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    color: rgb(0, 0, 0);
-}
 
 .share-button {
     position: relative;

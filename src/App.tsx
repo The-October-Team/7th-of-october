@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./styles.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "./styles.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Button, Col, Image } from "react-bootstrap";
 import eventsData from "./data.json";
 import { Routes, Route, Link } from "react-router-dom";

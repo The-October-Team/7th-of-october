@@ -1,12 +1,14 @@
 import React from "react";
 import "../styles.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import { FacebookIcon, TwitterIcon } from "react-share";
 import { ReactComponent as HouseIcon } from "../images/house.svg";
 
 function EnoughContent() {
+    document.body.style.position = "fixed";
+
     return (
         <div className="enough">
             <p className="title">WHAT CAN I DO?</p>
