@@ -20,7 +20,7 @@ function MainContent({
     setEventIndex: SetEventIndex;
     setContentWarning: SetContentWarning;
 }) {
-    
+
 
     return (
         <div id="page-container">
@@ -55,7 +55,7 @@ function MainContent({
                     </>
                 )}
                 <div id="fade-top" />
-                 {/* <img
+                {/* <img
                     src={eventsData[eventIndex].path}
                     id="graphic"
                     alt="Image Description"
