@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./styles.css";
 import eventsData from "./data.json";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Enough from "./pages/enough";
+import "./styles.css";
 
 type SetEventIndex = (index: number) => void;
 type SetContentWarning = (index: boolean) => void;

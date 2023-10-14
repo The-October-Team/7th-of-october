@@ -1,6 +1,15 @@
 /* Lato font */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Secular+One&family=Suez+One&display=swap');
 
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: var(--primary);
+}
+
 :root {
     --primary: #000000;
     --text: #fefefe;
@@ -12,13 +21,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100vh;
-    background-color: var(--primary);
 }
 
 #root {
@@ -76,13 +78,7 @@ body {
     max-height: 100%;
 }
 
-html,
-body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-}
+
 
 .title {
     text-align: center;
@@ -161,7 +157,6 @@ body {
 }
 
 #eye {
-.main-img {
     margin-left: auto;
     margin-right: auto;
     display: block;
