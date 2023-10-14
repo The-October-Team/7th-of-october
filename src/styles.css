@@ -1,8 +1,7 @@
 html,
 body {
     /* overflow: hidden; */
-    
-    /* position: fixed; */
+    position: fixed; 
 }
 
 .title {
