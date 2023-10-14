@@ -69,6 +69,43 @@ body {
     font-size: 3em;
 }
 
+.fundraisers{
+    text-align: center;
+}
+.fundraisers > p {
+    margin-block-end: 0.2em;
+}
+
+.fundraisers > .title {
+    font-family: "Bahnschrift Condensed";
+    font-weight: bold;
+    text-shadow: 0.05rem 0.05rem #ABABAB;
+    font-size: 3em;
+    color: blue;
+}
+
+.fundraisers > .subtitle {
+    font-family: "Bahnschrift Condensed";
+    font-weight: bold;
+    text-shadow: 0.05rem 0.05rem #ABABAB;
+    font-size: 1.4em;
+    color: black;
+}
+
+.donate-link {
+    font-family: "Bahnschrift Condensed";
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0.05rem 0.05rem #ABABAB;
+    font-size: 1.2em;
+    color: black;
+}
+
+#star-of-david {
+    bottom: 1rem;
+    width: 5rem;
+}
+
 #house-icon {
     position: absolute;
     bottom: 1rem;
