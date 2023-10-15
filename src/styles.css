@@ -285,7 +285,6 @@ body {
     text-align: center;
     color: var(--text);
     font-size: 1.25rem;
-    /* height: fit-content; */
     z-index: 4;
 }
 
