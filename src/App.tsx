@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import eventsData from "./data.json";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Enough from "./pages/enough";
 import Fundraisers from "./pages/fundraisers";
 import "./styles.css";
 import Content from "./components/Content";
-
 
 type SetEventIndex = (index: number) => void;
 type SetContentWarning = (index: boolean) => void;
@@ -22,18 +21,17 @@ function MainContent({
     setEventIndex: SetEventIndex;
     setContentWarning: SetContentWarning;
 }) {
-
-
     return (
         <div id="page-container">
             <section id="title-container">
                 <p id="main-title">
-                    THE TRUE FACE<br/>OF PALESTINE
+                    THE TRUE FACE
+                    <br />
+                    OF PALESTINE
                 </p>
                 <p id="main-subtitle">
                     IN THE PAST FEW DAYS, HAMAS TERRORISTS TOOK OVER ISRAELI
-                    TOWNS. THIS IS THE AFTERMATH OF THEIR HORRIFIC
-                    ATTACK.
+                    TOWNS. THIS IS THE AFTERMATH OF THEIR HORRIFIC ATTACK.
                 </p>
                 <p id="worse-warn">
                     WARNING: FOOTAGE WILL GET PROGRESSIVELY WORSE.
@@ -67,7 +65,8 @@ function MainContent({
                 /> */}
                 <Content
                     src={eventsData[eventIndex].path}
-                    details={eventsData[eventIndex].details} />
+                    details={eventsData[eventIndex].details}
+                />
             </main>
             <p id="graphic-detail">{eventsData[eventIndex].details}</p>
             <div className="btn-container">
@@ -79,7 +78,7 @@ function MainContent({
                 </button>
                 <button id="btn-ive-seen-enough" onClick={scrollToEnough}>
                     {/* <Link id="enough-link" to='/enough'> */}
-                        I&apos;VE SEEN ENOUGH
+                    I&apos;VE SEEN ENOUGH
                     {/* </Link> */}
                 </button>
             </div>
@@ -119,19 +118,19 @@ function disableWarning(
     setContentWarning: SetContentWarning
 ) {
     return () => {
-        scrollToGraphic()
+        scrollToGraphic();
         setContentWarning(false);
     };
 }
-function scrollToGraphic(){
+function scrollToGraphic() {
     window.scrollTo({
-        top: document.getElementById("worse-warn")?.offsetTop!,
-        behavior: "smooth"
-    })
+        top: document.getElementById("worse-warn")?.offsetTop || 0,
+        behavior: "smooth",
+    });
 }
-function scrollToEnough(){
-    let element = document.getElementById("enough-container")!
-    element.scrollIntoView({behavior: "smooth"})
+function scrollToEnough() {
+    const element = document.getElementById("enough-container")!;
+    element.scrollIntoView({ behavior: "smooth" });
 }
 
 const Homepage = () => {
