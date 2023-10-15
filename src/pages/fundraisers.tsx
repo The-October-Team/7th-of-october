@@ -6,14 +6,16 @@ import { Link } from "react-router-dom";
 import { ReactComponent as HouseIcon } from "../images/house.svg";
 
 function FundraisersContent() {
+    document.body.style.position = "relative";
+
     return (
         <div className="fundraisers">
             <p className="title"><span>SUPPORT</span> ISRAEL</p>
             <section>
-                <p className="subtitle">
-                    Donate to Hospitals and Medical Centers
-                </p>
                 <div className="fundraiser-category">
+                    <p className="subtitle">
+                        Donate to Hospitals and Medical Centers
+                    </p>
                     <a
                         className="donate-link"
                         href="https://www.bmc.gov.il/?CategoryID=511"
@@ -44,8 +46,8 @@ function FundraisersContent() {
                 </div>
             </section>
             <section>
-                <p className="subtitle">Donate to Emergency Services</p>
                 <div className="fundraiser-category">
+                    <p className="subtitle">Donate to Emergency Services</p>
                     <a
                         className="donate-link"
                         href="https://www.mdais.org/en/donation"
@@ -64,8 +66,8 @@ function FundraisersContent() {
                 </div>
             </section>{" "}
             <section>
-                <p className="subtitle">Support Soldiers and Families</p>
                 <div className="fundraiser-category">
+                    <p className="subtitle">Support Soldiers and Families</p>
                     <a
                         className="donate-link"
                         href="https://belevechad.nyc/who-we-are/"
@@ -86,8 +88,8 @@ function FundraisersContent() {
                 </div>
             </section>{" "}
             <section>
-                <p className="subtitle">Support Mental Health Resources</p>
                 <div className="fundraiser-category">
+                    <p className="subtitle">Support Mental Health Resources</p>
                     <a className="donate-link" href="https://www.afnatal.org/">
                         AFNATAL
                     </a>
@@ -119,6 +121,7 @@ function FundraisersContent() {
             <Link to="/">
                 <HouseIcon width={100} height={100} id="house-icon" />
             </Link>
+            <div id="bottom"></div>
         </div>
     );
 }
