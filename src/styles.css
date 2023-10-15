@@ -12,8 +12,6 @@
 
 body {
     font-family: "Anton";
-    /* overflow-x: hidden; */
-    /* height: 100%; */
     width: 100%;
     background-color: var(--primary);
 }
