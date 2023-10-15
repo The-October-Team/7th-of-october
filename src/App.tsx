@@ -28,12 +28,15 @@ function MainContent({
         <div id="page-container">
             <section id="title-container">
                 <p id="main-title">
-                    <span>true face of</span> palestine
+                    THE TRUE FACE<br/>OF PALESTINE
                 </p>
                 <p id="main-subtitle">
                     IN THE PAST FEW DAYS, HAMAS TERRORISTS TOOK OVER ISRAELI
-                    TOWNS. THE IMAGES BELOW ARE THE AFTERMATH OF THEIR BRUTAL
+                    TOWNS. THIS IS THE AFTERMATH OF THEIR HORRIFIC
                     ATTACK.
+                </p>
+                <p id="worse-warn">
+                    WARNING: FOOTAGE WILL GET PROGRESSIVELY WORSE.
                 </p>
             </section>
             <main id="graphic-container">
@@ -65,7 +68,6 @@ function MainContent({
                 <Content
                     src={eventsData[eventIndex].path}
                     details={eventsData[eventIndex].details} />
-                <div id="fade-bottom" />
             </main>
             <p id="graphic-detail">{eventsData[eventIndex].details}</p>
             <div className="btn-container">
@@ -75,10 +77,11 @@ function MainContent({
                 >
                     SHOW ME MORE
                 </button>
-                <button id="btn-ive-seen-enough">
-                    <Link id="enough-link" to='/enough'>
+                <button id="btn-ive-seen-enough" onClick={scrollToEnough}>
+                    {/* <Link id="enough-link" to='/enough'> */}
                         I&apos;VE SEEN ENOUGH
-                    </Link></button>
+                    {/* </Link> */}
+                </button>
             </div>
         </div>
     );
@@ -116,8 +119,19 @@ function disableWarning(
     setContentWarning: SetContentWarning
 ) {
     return () => {
+        scrollToGraphic()
         setContentWarning(false);
     };
+}
+function scrollToGraphic(){
+    window.scrollTo({
+        top: document.getElementById("worse-warn")?.offsetTop!,
+        behavior: "smooth"
+    })
+}
+function scrollToEnough(){
+    let element = document.getElementById("enough-container")!
+    element.scrollIntoView({behavior: "smooth"})
 }
 
 const Homepage = () => {
@@ -132,6 +146,7 @@ const Homepage = () => {
                 setContentWarning={setContentWarning}
                 setEventIndex={setEventIndex}
             ></MainContent>
+            <Enough></Enough>
         </>
     );
 };

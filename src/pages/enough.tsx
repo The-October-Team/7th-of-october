@@ -8,7 +8,7 @@ import { ReactComponent as HouseIcon } from "../images/house.svg";
 function EnoughContent() {
     return (
         <div className="enough">
-            <p className="title">WHAT CAN I DO?</p>
+            <p className="title" id="enough-container">WHAT CAN I DO?</p>
             <ul className="bullet-points">
                 <li> SUPPORT ISRAEL ONLINE USING THE HASHTAGS <span className="hashtag"> #TRUEFACEOFPALESTINE #HAMASisISIS </span ></li>
                 <li> SHARE THIS SITE TO SHOW THE WORLD THE ATROCITIES THE ISRAELI PEOPLE FACE <br/>
