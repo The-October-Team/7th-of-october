@@ -3,7 +3,6 @@ import "../styles.css";
 import { Link } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import { FacebookIcon, TwitterIcon } from "react-share";
-import { ReactComponent as HouseIcon } from "../images/house.svg";
 
 function EnoughContent() {
     return (
@@ -40,11 +39,11 @@ function EnoughContent() {
                 <li> DONATE TO THE FOLLOWING <Link to='/fundraisers'> FUNDRAISERS </Link> SUPPORTING THE SURVIVORS AND THE IDF </li>
                 <li> DON&apos;T FALL FOR THE RADICAL ISLAMIST PROPOGANDA, CHOOSE <u> THE RIGHT SIDE OF HISTORY </u> BEFORE MORE BLOOD IS SPILT </li>
             </ul>
+            <p id="enough-title">
+                <span>true face <br /> of </span> palestine
+            </p>
             <img src="../images/blood.png" id="blood-img" alt="blood" />
             <br />
-            <Link to='/'>
-                <HouseIcon width={40} height={40} id="house-icon"/>
-            </Link>
         </div>
     );
 }
