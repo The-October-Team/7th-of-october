@@ -313,7 +313,7 @@ body {
     position: absolute;
     transform: rotate(352deg);
     top: 35rem;
-    right: -30rem;
+    right: -25rem;
     z-index: 1;
 }
 
@@ -365,8 +365,9 @@ body {
     letter-spacing: 0.15rem;
     line-height: 3.8rem;
     margin-left: 2rem;
-    bottom: 1rem;
-    position:absolute;
+    margin-top: 2.2rem;
+    position:relative;
+    z-index: 99;
 }
 
 #enough-title>span {
@@ -389,9 +390,14 @@ body {
     }
 
     #blood-img {
-        top: 35rem;
-        right: -20rem;
+        top: 30rem;
+        right: -10rem;
     }
+
+    #enough-title {
+        visibility: hidden;
+    }
+
 }
 
 a:link {
