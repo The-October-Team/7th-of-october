@@ -79,7 +79,6 @@ function MainContent({
                 <button id="btn-ive-seen-enough" onClick={scrollToEnough}>
                     {/* <Link id="enough-link" to='/enough'> */}
                     I&apos;VE SEEN ENOUGH
-                    {/* </Link> */}
                 </button>
             </div>
         </div>
