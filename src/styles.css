@@ -320,12 +320,13 @@ body {
 .bullet-points li {
     position: relative;
     font-family: "Bahnschrift Condensed";
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-weight: bold;
     text-shadow: 0.1rem 0.1rem #ABABAB;
     color: black;
     margin: auto;
     width: 80%;
+    padding: 0.5em 0px;
 }
 
 .enough p {
@@ -352,8 +353,24 @@ body {
 
 .share-button {
     position: relative;
-    left: 12rem;
+    left: 10rem;
     margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#enough-title {
+    font-family: "Anton";
+    text-transform: uppercase;
+    font-size: 4rem;
+    letter-spacing: 0.15rem;
+    line-height: 3.8rem;
+    margin-left: 2rem;
+    bottom: 1rem;
+    position:absolute;
+}
+
+#enough-title>span {
+    font-size: 0.75em;
 }
 
 @media only screen and (min-width: 768px) {
@@ -365,7 +382,6 @@ body {
 
     .bullet-points {
         position: absolute;
-        left: 20em;
     }
 
     html {
