@@ -11,10 +11,8 @@
 }
 
 body {
-    overflow: hidden;
-    height: 100%;
+    font-family: "Anton";
     width: 100%;
-    position: fixed;
     background-color: var(--primary);
 }
 
@@ -25,7 +23,6 @@ body {
 }
 
 #root {
-    overflow: hidden;
 }
 
 /* blood */
@@ -48,24 +45,23 @@ body {
 
 #title-container>* {
     width: fit-content;
-    height: fit-content;
 }
 
 #main-title {
-    font-family: "Anton";
     text-transform: uppercase;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    line-height: 4rem;
     letter-spacing: 0.05rem;
     z-index: 99;
 }
 
-#main-title>span {
-    font-size: 0.75em;
+#main-subtitle {
+    font-size: 1.1rem;
 }
 
-#main-subtitle {
-    font-family: "Anton";
-    font-size: 1rem;
+#worse-warn {
+    padding-top: 1.5vh;
+    align-self: center;
 }
 
 /* Top text */
@@ -73,9 +69,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     width: 100vw;
-    ;
     max-width: 100%;
     max-height: 100%;
 }
@@ -111,8 +105,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: 60vh;
 }
 
 
@@ -124,12 +117,10 @@ body {
 }
 
 #graphic-detail {
-    position: absolute;
     bottom: 20%;
     width: fit-content;
     max-width: 60%;
     text-align: center;
-    font-family: "Anton";
     color: var(--text);
     font-size: 4.5vw;
     margin-block: auto;
@@ -137,7 +128,7 @@ body {
     background-color: rgba(0, 0, 0, .8);
     padding: 0.25rem 2rem;
     border-radius: 0.25rem;
-    ;
+    height: 12vh;
 }
 
 #blur {
@@ -170,7 +161,6 @@ body {
 
 #content-warning {
     text-align: center;
-    font-family: "Anton";
     font-size: 1.2rem;
 }
 
@@ -184,9 +174,11 @@ body {
     gap: 0.75rem;
     padding-block: 1rem;
     z-index: 99;
+    margin-bottom: 2vh;
 }
 
 .btn-container>* {
+    font-family: "Anton";
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -195,14 +187,12 @@ body {
     border: 0;
     width: fit-content;
     text-align: center;
-    font-family: 'Lato', sans-serif;
     color: white;
     font-size: 1rem;
 }
 
 #btn-ive-seen-enough {
     background-color: #830503;
-    font-family: "Anton";
     padding: 0.5rem 1rem;
 }
 
@@ -213,7 +203,6 @@ body {
 
 #btn-show-me-more {
     background-color: #830503;
-    font-family: "Anton";
     font-size: 1.5rem;
     line-height: 1.2rem;
 }
@@ -294,14 +283,12 @@ body {
     text-align: center;
     color: var(--text);
     font-size: 1.25rem;
-    height: fit-content;
     z-index: 4;
 }
 
 .enough {
     position: absolute;
     width: 100%;
-    height: 100%;
     background-color: white;
 }
 
@@ -313,21 +300,22 @@ body {
     position: absolute;
     transform: rotate(352deg);
     top: 35rem;
-    right: -30rem;
+    right: -25rem;
     z-index: 1;
 }
 
 .bullet-points li {
     position: relative;
-    font-family: "Bahnschrift Condensed";
     font-size: 1.25em;
     font-weight: bold;
     text-shadow: 0.1rem 0.1rem #ABABAB;
     color: black;
+    margin: auto;
+    width: 80%;
+    padding: 0.5em 0px;
 }
 
 .enough p {
-    font-family: "Bahnschrift Condensed";
     font-weight: bold;
     text-shadow: 0.05rem 0.05rem #ABABAB;
     font-size: 3em;
@@ -341,7 +329,6 @@ body {
 }
 
 .fundraisers>.subtitle {
-    font-family: "Bahnschrift Condensed";
     font-weight: bold;
     text-shadow: 0.05rem 0.05rem #ABABAB;
     font-size: 1.4em;
@@ -350,8 +337,25 @@ body {
 
 .share-button {
     position: relative;
-    left: 6.5rem;
+    left: 10rem;
     margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+#enough-title {
+    font-family: "Anton";
+    text-transform: uppercase;
+    font-size: 4rem;
+    letter-spacing: 0.15rem;
+    line-height: 3.8rem;
+    margin-left: 2rem;
+    margin-top: 2.2rem;
+    position:relative;
+    z-index: 99;
+}
+
+#enough-title>span {
+    font-size: 0.75em;
 }
 
 @media only screen and (min-width: 768px) {
@@ -363,7 +367,6 @@ body {
 
     .bullet-points {
         position: absolute;
-        left: 20em;
     }
 
     html {
@@ -371,7 +374,15 @@ body {
     }
 
     #blood-img {
-        top: 35rem;
-        right: -20rem;
+        top: 30rem;
+        right: -10rem;
+    }
+
+    #enough-title {
+        visibility: hidden;
     }
 }
+
+a:link {
+    color: grey;
+  }

@@ -3,12 +3,11 @@ import "../styles.css";
 import { Link } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import { FacebookIcon, TwitterIcon } from "react-share";
-import { ReactComponent as HouseIcon } from "../images/house.svg";
 
 function EnoughContent() {
     return (
         <div className="enough">
-            <p className="title">WHAT CAN I DO?</p>
+            <p className="title" id="enough-container">WHAT CAN I DO?</p>
             <ul className="bullet-points">
                 <li> SUPPORT ISRAEL ONLINE USING THE HASHTAGS <span className="hashtag"> #TRUEFACEOFPALESTINE #HAMASisISIS </span ></li>
                 <li> SHARE THIS SITE TO SHOW THE WORLD THE ATROCITIES THE ISRAELI PEOPLE FACE <br/>
@@ -40,11 +39,11 @@ function EnoughContent() {
                 <li> DONATE TO THE FOLLOWING <Link to='/fundraisers'> FUNDRAISERS </Link> SUPPORTING THE SURVIVORS AND THE IDF </li>
                 <li> DON&apos;T FALL FOR THE RADICAL ISLAMIST PROPOGANDA, CHOOSE <u> THE RIGHT SIDE OF HISTORY </u> BEFORE MORE BLOOD IS SPILT </li>
             </ul>
+            <p id="enough-title">
+                <span>true face <br /> of </span> palestine
+            </p>
             <img src="../images/blood.png" id="blood-img" alt="blood" />
             <br />
-            <Link to='/'>
-                <HouseIcon width={40} height={40} id="house-icon"/>
-            </Link>
         </div>
     );
 }

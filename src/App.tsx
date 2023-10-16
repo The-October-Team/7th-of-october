@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import eventsData from "./data.json";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Enough from "./pages/enough";
 import Fundraisers from "./pages/fundraisers";
 import "./styles.css";
 import Content from "./components/Content";
-
 
 type SetEventIndex = (index: number) => void;
 type SetContentWarning = (index: boolean) => void;
@@ -22,18 +21,20 @@ function MainContent({
     setEventIndex: SetEventIndex;
     setContentWarning: SetContentWarning;
 }) {
-
-
     return (
         <div id="page-container">
             <section id="title-container">
                 <p id="main-title">
-                    <span>true face of</span> palestine
+                    THE TRUE FACE
+                    <br />
+                    OF PALESTINE
                 </p>
                 <p id="main-subtitle">
                     IN THE PAST FEW DAYS, HAMAS TERRORISTS TOOK OVER ISRAELI
-                    TOWNS. THE IMAGES BELOW ARE THE AFTERMATH OF THEIR BRUTAL
-                    ATTACK.
+                    TOWNS. THIS IS THE AFTERMATH OF THEIR HORRIFIC ATTACK.
+                </p>
+                <p id="worse-warn">
+                    WARNING: FOOTAGE WILL GET PROGRESSIVELY WORSE.
                 </p>
             </section>
             <main id="graphic-container">
@@ -64,8 +65,8 @@ function MainContent({
                 /> */}
                 <Content
                     src={eventsData[eventIndex].path}
-                    details={eventsData[eventIndex].details} />
-                <div id="fade-bottom" />
+                    details={eventsData[eventIndex].details}
+                />
             </main>
             <p id="graphic-detail">{eventsData[eventIndex].details}</p>
             <div className="btn-container">
@@ -75,10 +76,9 @@ function MainContent({
                 >
                     SHOW ME MORE
                 </button>
-                <button id="btn-ive-seen-enough">
-                    <Link id="enough-link" to='/enough'>
-                        I&apos;VE SEEN ENOUGH
-                    </Link></button>
+                <button id="btn-ive-seen-enough" onClick={scrollToEnough}>
+                    I&apos;VE SEEN ENOUGH
+                </button>
             </div>
         </div>
     );
@@ -116,8 +116,19 @@ function disableWarning(
     setContentWarning: SetContentWarning
 ) {
     return () => {
+        scrollToGraphic();
         setContentWarning(false);
     };
+}
+function scrollToGraphic() {
+    window.scrollTo({
+        top: document.getElementById("worse-warn")?.offsetTop || 0,
+        behavior: "smooth",
+    });
+}
+function scrollToEnough() {
+    const element = document.getElementById("enough-container")!;
+    element.scrollIntoView({ behavior: "smooth" });
 }
 
 const Homepage = () => {
@@ -132,6 +143,7 @@ const Homepage = () => {
                 setContentWarning={setContentWarning}
                 setEventIndex={setEventIndex}
             ></MainContent>
+            <Enough></Enough>
         </>
     );
 };
