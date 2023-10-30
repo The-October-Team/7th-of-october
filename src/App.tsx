@@ -3,9 +3,10 @@ import eventsData from "./data.json";
 import { Routes, Route } from "react-router-dom";
 import Enough from "./pages/enough";
 import Fundraisers from "./pages/fundraisers";
-import "./styles.css";
+import "./style.css";
 import Content from "./components/Content";
-
+import disableScroll from "./block-scroll.js"
+import FadeInOut from "./FadeInOut";
 type SetEventIndex = (index: number) => void;
 type SetContentWarning = (index: boolean) => void;
 const MEAN_STEP = Math.floor(eventsData.length / 12);
@@ -23,46 +24,38 @@ function MainContent({
 }) {
     return (
         <div id="page-container">
-            <section id="title-container">
+            <div id="title-container">
                 <p id="main-title">
-                    THE TRUE FACE
+                    TRUE FACE
                     <br />
                     OF PALESTINE
                 </p>
                 <p id="main-subtitle">
-                    IN THE PAST FEW DAYS, HAMAS TERRORISTS TOOK OVER ISRAELI
-                    TOWNS. THIS IS THE AFTERMATH OF THEIR HORRIFIC ATTACK.
+                    Like every war in the conflict, this one too started after a palestinian terror attack.
+                    Hamas took over civilian towns, commiting some of the most horrifying atrocities of the 21st century.
                 </p>
                 <p id="worse-warn">
-                    WARNING: FOOTAGE WILL GET PROGRESSIVELY WORSE.
+                    FOOTAGE WILL GET PROGRESSIVELY MORE GRAPHIC
                 </p>
-            </section>
+            </div>
             <main id="graphic-container">
                 {contentWarning && (
                     <>
                         <div id="blur" />
-                        <div id="warning-containter">
+                        <div id="warning-containter" onClick={disableWarning(contentWarning, setContentWarning)}>
                             <img id="eye" src="../images/eye.png" />
-                            <p
-                                id="content-warning"
-                                onClick={disableWarning(
-                                    contentWarning,
-                                    setContentWarning
-                                )}
-                            >
+                            <p id="content-warning">
                                 CONTENT WARNING: EXTREME VIOLENCE
                                 <br />
+                            </p>
+                            <p id="btn-disable-warning">
                                 SHOW
                             </p>
                         </div>
+                        <div id="fade-top" />
                     </>
                 )}
-                <div id="fade-top" />
-                {/* <img
-                    src={eventsData[eventIndex].path}
-                    id="graphic"
-                    alt="Image Description"
-                /> */}
+                
                 <Content
                     src={eventsData[eventIndex].path}
                     details={eventsData[eventIndex].details}
@@ -74,8 +67,9 @@ function MainContent({
                     onClick={incIndex(eventIndex, setEventIndex)}
                     id="btn-show-me-more"
                 >
-                    SHOW ME MORE
+                    WITNESS MORE
                 </button>
+                <br />
                 <button id="btn-ive-seen-enough" onClick={scrollToEnough}>
                     I&apos;VE SEEN ENOUGH
                 </button>
@@ -86,28 +80,29 @@ function MainContent({
 
 function incIndex(eventIndex: number, setEventIndex: SetEventIndex) {
     return () => {
-        const step = Math.ceil(Math.random() * MEAN_STEP * 2);
-        if (eventIndex + step >= eventsData.length) {
-            let i = 0;
-            for (i = eventsData.length - 2; i >= 0; --i) {
-                if (
-                    eventsData[i].level !=
-                    eventsData[eventsData.length - 1].level
-                ) {
-                    break;
-                }
-            }
-            if (i == eventIndex) {
-                if (i + 1 < eventsData.length) {
-                    ++i;
-                } else if (i > 0) {
-                    --i;
-                }
-            }
-            setEventIndex(i);
-            return;
-        }
-        setEventIndex(eventIndex + step);
+        setEventIndex((eventIndex + 1) % eventsData.length);
+        // const step = Math.ceil(Math.random() * MEAN_STEP * 2);
+        // if (eventIndex + step >= eventsData.length) {
+        //     let i = 0;
+        //     for (i = eventsData.length - 2; i >= 0; --i) {
+        //         if (
+        //             eventsData[i].level !=
+        //             eventsData[eventsData.length - 1].level
+        //         ) {
+        //             break;
+        //         }
+        //     }
+        //     if (i == eventIndex) {
+        //         if (i + 1 < eventsData.length) {
+        //             ++i;
+        //         } else if (i > 0) {
+        //             --i;
+        //         }
+        //     }
+        //     setEventIndex(i);
+        //     setEventIndex(eventIndex + 1);
+        // }
+        // setEventIndex(eventIndex + step);
     };
 }
 
@@ -131,6 +126,8 @@ function scrollToEnough() {
     element.scrollIntoView({ behavior: "smooth" });
 }
 
+disableScroll();
+
 const Homepage = () => {
     const [eventIndex, setEventIndex] = useState(0);
     const [contentWarning, setContentWarning] = useState(true);
@@ -148,7 +145,10 @@ const Homepage = () => {
     );
 };
 
-export default function App() {
+export default function App() { 
+    window.addEventListener('load', () => {
+        window.scrollTo(0, 0);
+    });
     return (
         <div>
             <Routes>

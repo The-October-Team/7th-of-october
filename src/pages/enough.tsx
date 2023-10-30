@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles.css";
+import "../style.css";
 import { Link } from "react-router-dom";
 import { FacebookShareButton, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 import { FacebookIcon, TwitterIcon } from "react-share";
@@ -9,13 +9,13 @@ function EnoughContent() {
         <div className="enough">
             <p className="title" id="enough-container">WHAT CAN I DO?</p>
             <ul className="bullet-points">
-                <li> SUPPORT ISRAEL ONLINE USING THE HASHTAGS <span className="hashtag"> #TRUEFACEOFPALESTINE #HAMASisISIS </span ></li>
-                <li> SHARE THIS SITE TO SHOW THE WORLD THE ATROCITIES THE ISRAELI PEOPLE FACE <br/>
+                <li className="bullet">SUPPORT ISRAEL ONLINE USING HASHTAGS <span className="hashtag">#TRUEFACEOFPALESTINE #HAMASisISIS</span ></li>
+                <li className="bullet"><span className="link" onClick={share}>SHARE THIS WEBSITE</span> AND SHOW THE WORLD WHO ARE HAMAS'S "FREEDOM FIGHTERS"<br/></li>
+                {/* <div className="share-buttons">
                     <FacebookShareButton
                         url={"https://trueface.com/"}
                         quote={"Learn more about how Hamas Is Isis!"}
                         hashtag={"#TRUEFACEOFPALESTINE"}
-                        className="share-button"
                     >
                         <FacebookIcon size={32} round />
                     </FacebookShareButton>
@@ -23,31 +23,37 @@ function EnoughContent() {
                         title={"The true face of Palestine"}
                         url={"https://trueface.com/"}
                         hashtags={["TRUEFACEOFPALESTINE", "HAMASisISIS"]}
-                        className="share-button"
                     >
                         <TwitterIcon size={32} round />
                     </TwitterShareButton>
                     <WhatsappShareButton
                         title={"The true face of Palestine"}
                         url={"https://trueface.com/"}
-                        className="share-button"
                     >
                         <WhatsappIcon size={32} round />
                     </WhatsappShareButton>
-                </li>
-                <li> READ ABOUT <a href="https://en.wikipedia.org/wiki/Israeli%E2%80%93Palestinian_conflict"> THE CONFLICT </a> AND HOW PALESTINIAN LEADERSHIP ALWAYS DESTROYS THE PEACE PROCESS </li>
-                <li> DONATE TO THE FOLLOWING <Link to='/fundraisers'> FUNDRAISERS </Link> SUPPORTING THE SURVIVORS AND THE IDF </li>
-                <li> DON&apos;T FALL FOR THE RADICAL ISLAMIST PROPOGANDA, CHOOSE <u> THE RIGHT SIDE OF HISTORY </u> BEFORE MORE BLOOD IS SPILT </li>
+                </div> */}
+                <li className="bullet"> WATCH VIDEOS ABOUT <a href="https://www.prageru.com/video/why-isnt-there-a-palestinian-state" className="link"> THE CONFLICT </a> AND HOW PALESTINIAN LEADERSHIP ALWAYS DESTROYS THE PEACE PROCESS. </li>
+                <li className="bullet"> DONATE TO THE FOLLOWING <Link to='/fundraisers' className="link">FUNDRAISERS</Link> SUPPORTING THE SURVIVORS AND THE IDF </li>
+                <li className="bullet"> STAY VIGILANT. IF ANY MEDIA GROUP DOES NOT CALL HAMAS A TERRORIST ORGANIZATION, IT IS CLEARLY BIASED. </li>
             </ul>
             <p id="enough-title">
                 <span>true face <br /> of </span> palestine
             </p>
-            <img src="../images/blood.png" id="blood-img" alt="blood" />
+            <img src="../images/blood-2.png" id="blood-img" alt="blood" />
             <br />
         </div>
     );
 }
 
+
+function share(){
+    navigator.share({
+        title: 'True Face of Palestine',
+        text: 'Today I learned how the war in Gaza started - the whole world must see what the Palestinians did there.',
+        url: 'truefaceofpalestine.com',
+    })
+}
 const Enough = () => {
     return (
         <>

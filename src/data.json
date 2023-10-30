@@ -1,81 +1,32 @@
 [
     {
-        "details": "1",
-        "path": "/images/Plane.png",
+        "details": "What do you think - did they kill the baby and let the father watch, or kill the father and let the baby watch?",
+        "path": "/images/dead_babies_2.webp",
         "level": 1
     },
     {
-        "details": "2",
-        "path": "/images/image.png",
-        "level": 2
-    },
-    {
-        "details": "Details about second event",
-        "path": "/images/vid1.mp4"
-    },
-    {
-        "details": "4",
-        "path": "/images/graphic_design_is_my_passion.png",
-        "level": 2
-    },
-    {
-        "details": "5",
-        "path": "/images/Plane.png",
-        "level": 2
-    },
-    {
-        "details": "6",
-        "path": "/images/image.png",
-        "level": 2
-    },
-    {
-        "details": "7",
-        "path": "/images/Plane.png",
-        "level": 2
-    },
-    {
-        "details": "8",
-        "path": "/images/graphic_design_is_my_passion.png",
-        "level": 2
-    },
-    {
-        "details": "9",
-        "path": "/images/Plane.png",
-        "level": 2
-    },
-    {
-        "details": "10",
-        "path": "/images/image.png",
-        "level": 2
-    },
-    {
-        "details": "11",
-        "path": "/images/Plane.png",
-        "level": 2
-    },
-    {
-        "details": "12",
-        "path": "/images/graphic_design_is_my_passion.png",
+        "details": "Shani Louk, a german tourist kidnapped from the music festival. You know why they stripped her down. Paraded throughout Gaza for the children to see how women should be treated.",
+        "path": "/images/shani_louk.mp4",
         "level": 3
     },
     {
-        "details": "13",
-        "path": "/images/Plane.png",
-        "level": 3
+        "details": "A father, butchered in his home.\nThis is what gives glory to their emblem.\nThis is how they get their public's admiration.",
+        "path": "/images/emblem.jpg",
+        "level": 4
     },
     {
-        "details": "14",
-        "path": "/images/image.png",
-        "level": 3
+        "details": "THEY KILLED A BABY IN ITS STROLLER. THEY KILLED A BABY IN ITS STROLLER. THEY KILLED A BABY IN ITS STROLLER. THEY KILLED A BABY IN ITS STROLLER. THEY KILLED A BABY IN ITS STROLLER.  THEY KILLED A...",
+        "path": "/images/dead_babies_1.webp",
+        "level": 5
     },
     {
-        "details": "15",
-        "path": "/images/Plane.png",
-        "level": 3
+        "details": "Elderly people, grandparents, waiting for the bus. All gunned down.\nWhat is a fair response to something like this?",
+        "path": "/images/elderly_bus.jpg",
+        "level": 6
     },
     {
-        "details": "16",
-        "path": "/images/graphic_design_is_my_passion.png",
-        "level": 3
- }
+        "details": "They were hiding in their bomb shelter.\nUnarmed. Defenceless. Butchered.\nShot even when clearly dead.\nIs this really about \"liberation\"?",
+        "path": "/images/shelter.mp4",
+        "level": 7
+    }
 ]
