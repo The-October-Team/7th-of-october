@@ -7,7 +7,7 @@ import { FacebookIcon, TwitterIcon } from "react-share";
 function EnoughContent() {
     return (
         <div className="enough">
-            <p className="title" id="enough-container">WHAT CAN I DO?</p>
+            <p id="enough-title">WHAT CAN I DO?</p>
             <ul className="bullet-points">
                 <li className="bullet">SUPPORT ISRAEL ONLINE USING HASHTAGS <span className="hashtag">#TRUEFACEOFPALESTINE #HAMASisISIS</span ></li>
                 <li className="bullet"><span className="link" onClick={share}>SHARE THIS WEBSITE</span> AND SHOW THE WORLD WHO ARE HAMAS'S "FREEDOM FIGHTERS"<br/></li>
@@ -37,10 +37,9 @@ function EnoughContent() {
                 <li className="bullet"> DONATE TO THE FOLLOWING <Link to='/fundraisers' className="link">FUNDRAISERS</Link> SUPPORTING THE SURVIVORS AND THE IDF </li>
                 <li className="bullet"> STAY VIGILANT. IF ANY MEDIA GROUP DOES NOT CALL HAMAS A TERRORIST ORGANIZATION, IT IS CLEARLY BIASED. </li>
             </ul>
-            <p id="enough-title">
-                <span>true face <br /> of </span> palestine
+            <p id="enough-footer">
+                true face <br /> of <span> palestine</span>
             </p>
-            <img src="../images/blood-2.png" id="blood-img" alt="blood" />
             <br />
         </div>
     );

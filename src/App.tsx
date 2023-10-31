@@ -34,14 +34,9 @@ function MainContent({
                     Like every war in the conflict, this one too started after a palestinian terror attack.
                     Hamas took over civilian towns, commiting some of the most horrifying atrocities of the 21st century.
                 </p>
-                <p id="worse-warn">
-                    FOOTAGE WILL GET PROGRESSIVELY MORE GRAPHIC
-                </p>
-            </div>
-            <main id="graphic-container">
+                
                 {contentWarning && (
                     <>
-                        <div id="blur" />
                         <div id="warning-containter" onClick={disableWarning(contentWarning, setContentWarning)}>
                             <img id="eye" src="../images/eye.png" />
                             <p id="content-warning">
@@ -52,10 +47,13 @@ function MainContent({
                                 SHOW
                             </p>
                         </div>
-                        <div id="fade-top" />
                     </>
                 )}
-                
+            </div>
+            <p id="worse-warn">
+                FOOTAGE WILL GET PROGRESSIVELY MORE GRAPHIC
+            </p>
+            <main id="graphic-container">
                 <Content
                     src={eventsData[eventIndex].path}
                     details={eventsData[eventIndex].details}
@@ -63,15 +61,14 @@ function MainContent({
             </main>
             <p id="graphic-detail">{eventsData[eventIndex].details}</p>
             <div className="btn-container">
+                <button id="btn-stop" onClick={scrollToEnough}>
+                    STOP
+                </button>
                 <button
                     onClick={incIndex(eventIndex, setEventIndex)}
-                    id="btn-show-me-more"
+                    id="btn-more"
                 >
                     WITNESS MORE
-                </button>
-                <br />
-                <button id="btn-ive-seen-enough" onClick={scrollToEnough}>
-                    I&apos;VE SEEN ENOUGH
                 </button>
             </div>
         </div>
@@ -122,7 +119,7 @@ function scrollToGraphic() {
     });
 }
 function scrollToEnough() {
-    const element = document.getElementById("enough-container")!;
+    const element = document.getElementById("enough-title")!;
     element.scrollIntoView({ behavior: "smooth" });
 }
 
