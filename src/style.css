@@ -118,7 +118,7 @@ html, body {
 }
 
 #graphic {
-    filter: blur(7px);
+    filter: blur(2vmin);
     max-width: 100%;
     max-height: 60vh;
 }

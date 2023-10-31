@@ -113,6 +113,7 @@ function disableWarning(
     };
 }
 function scrollToGraphic() {
+    document.getElementById("graphic")?.style.setProperty("filter", "none")
     window.scrollTo({
         top: document.getElementById("worse-warn")?.offsetTop || 0,
         behavior: "smooth",
